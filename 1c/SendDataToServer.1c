@@ -1,0 +1,15 @@
+Функция SendDataToServer(PostFile, PostScript)
+ AnswerFile = ПолучитьИмяВременногоФайла("txt");
+ url = "vgcom.ru:8080";
+	Попытка
+ 		Соединение = Новый HTTPСоединение(url);
+ 		Соединение.ОтправитьДляОбработки(PostFile, "/"+PostScript, AnswerFile);
+	Исключение
+		Сообщить(ОписаниеОшибки());
+		WriteLog(ОписаниеОшибки());
+	КонецПопытки;
+	PostReply = Новый ЧтениеТекста(AnswerFile, КодировкаТекста.UTF8);
+	PostReplyData = PostReply.Прочитать();
+	WriteLog(PostReplyData);
+ Возврат AnswerFile;
+КонецФункции
