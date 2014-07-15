@@ -14,3 +14,5 @@ COMMENT ON TABLE "dbo"."dealership" IS 'Доверенность';
 ALTER TABLE "dbo"."dealership" ADD CONSTRAINT "organization" NOT NULL FOREIGN KEY ( "id_org" ASC ) REFERENCES "dbo"."organization" ( "id" );
 ALTER TABLE "dbo"."dealership" ADD CONSTRAINT "person" NOT NULL FOREIGN KEY ( "id_person" ASC ) REFERENCES "dbo"."person" ( "person_id" );
 ALTER TABLE "dbo"."dealership" ADD CONSTRAINT "picture" FOREIGN KEY ( "id_picture" ASC ) REFERENCES "dbo"."picture" ( "id" );
+
+CREATE UNIQUE INDEX "number" ON "dbo"."dealership" ( "number" ASC ) IN "system";
