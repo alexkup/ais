@@ -1,0 +1,23 @@
+drop table "dbo"."picture";
+DROP DBSPACE "pictures";
+
+drop table "dbo"."objects";
+drop table "dbo"."stalls";
+drop table "dbo"."vehicle_reg";
+drop table "dbo"."banks";
+drop table "dbo"."organization";
+drop table "dbo"."pers_doc";
+drop table "dbo"."pers_doc_type";
+drop table "dbo"."addr_type";
+drop table "dbo"."addr";
+drop table "dbo"."person";
+drop table "dbo"."contact_type";
+drop table "dbo"."contact";
+drop table "dbo"."employee";
+drop table "dbo"."contract";
+drop table "dbo"."dealership";
+drop table "dbo"."price";
+drop table "dbo"."stall_status";
+drop table "dbo"."object_org";
+drop table "dbo"."stalls_type";
+drop table "dbo"."positions";
