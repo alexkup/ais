@@ -10,3 +10,6 @@ CREATE TABLE dbo.objects (
 COMMENT ON TABLE "dbo"."objects" IS 'Объекты';
 
 ALTER TABLE "dbo"."objects" ADD CONSTRAINT "obj_type" NOT NULL FOREIGN KEY ( "id_obj_type" ASC ) REFERENCES "dbo"."obj_type" ( "id_obj_type" );
+
+CREATE INDEX IX_objectsnumber ON objects (number);
+CREATE INDEX IX_objectsaddress ON objects (address);
