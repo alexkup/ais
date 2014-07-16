@@ -9,15 +9,17 @@ insert into web.objects_1c
 SELECT
     name,
     fullname,
-    type,
+    typelink,
     link,
-    xid     
+    xid,
+    xid_type
 FROM OPENSTRING(value @body) 
 WITH (name nvarchar(255),
     fullname nvarchar(255),
-    type nvarchar(255),
+    typelink nvarchar(255),
     link nvarchar(255),
-    xid UNIQUEIDENTIFIER)
+    xid UNIQUEIDENTIFIER,
+    xid_type UNIQUEIDENTIFIER)
 option(delimited by '|') 
 as h;
 end;
