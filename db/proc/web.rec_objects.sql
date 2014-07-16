@@ -22,5 +22,6 @@ WITH (name nvarchar(255),
     xid_type UNIQUEIDENTIFIER)
 option(delimited by '|') 
 as h;
+select 'OK';
 end;
 CREATE SERVICE "objects" TYPE 'RAW' AUTHORIZATION OFF USER "web" AS call web.rec_objects();
