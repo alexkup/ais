@@ -7,9 +7,15 @@ set @body=right(@body,length(@body)-1);
 truncate table web.stalls_1c;
 insert into web.stalls_1c
 SELECT
-    obj_id ,stall_type,name,link,xid  
+    obj_id ,stall_type,name,link,typelink,xid,xid_type 
 FROM OPENSTRING(value @body) 
-WITH (obj_id nvarchar(255),stall_type nvarchar(255),name nvarchar(255),link nvarchar(255),xid UNIQUEIDENTIFIER)
+WITH (obj_id nvarchar(255),
+    stall_type nvarchar(255),
+    name nvarchar(255),
+    link nvarchar(255),
+    typelink nvarchar(255),
+    xid UNIQUEIDENTIFIER,
+    xid_type UNIQUEIDENTIFIER)
 option(delimited by '|') 
 as h;
 select 'OK';
