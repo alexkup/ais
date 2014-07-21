@@ -22,3 +22,4 @@ option(delimited by '|')
 as h;
 select 'OK';
 end;
+CREATE SERVICE "stalls" TYPE 'RAW' AUTHORIZATION OFF USER "web" AS call web.rec_stalls();
