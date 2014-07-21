@@ -1,4 +1,4 @@
-create or replace procedure web.person_contracts()
+create or replace procedure web.org_contracts()
 begin
 select 
     contract.number,'|',
