@@ -19,10 +19,10 @@ CREATE TABLE dbo.contract (
 ) IN "system";
 COMMENT ON TABLE "dbo"."contract" IS 'Договоры';
 
-ALTER TABLE "dbo"."contract" ADD CONSTRAINT "organization" NOT NULL FOREIGN KEY ( "id_org" ASC ) REFERENCES "dbo"."organization" ( "id" );
-ALTER TABLE "dbo"."contract" ADD CONSTRAINT "person" NOT NULL FOREIGN KEY ( "id_person" ASC ) REFERENCES "dbo"."person" ( "person_id" );
-ALTER TABLE "dbo"."contract" ADD CONSTRAINT "dealership" NOT NULL FOREIGN KEY ( "id_dealership" ASC ) REFERENCES "dbo"."dealership" ( "id" );
-ALTER TABLE "dbo"."contract" ADD CONSTRAINT "dealership_emp" NOT NULL FOREIGN KEY ( "id_dealership_emp" ASC ) REFERENCES "dbo"."dealership" ( "id" );
-ALTER TABLE "dbo"."contract" ADD CONSTRAINT "price" NOT NULL FOREIGN KEY ( "id_price" ASC ) REFERENCES "dbo"."price" ( "id" );
-ALTER TABLE "dbo"."contract" ADD CONSTRAINT "picture" NOT NULL FOREIGN KEY ( "id_picture" ASC ) REFERENCES "dbo"."picture" ( "id" );
+ALTER TABLE "dbo"."contract" ADD CONSTRAINT "organization" FOREIGN KEY ( "id_org" ASC ) REFERENCES "dbo"."organization" ( "id" );
+ALTER TABLE "dbo"."contract" ADD CONSTRAINT "person" FOREIGN KEY ( "id_person" ASC ) REFERENCES "dbo"."person" ( "person_id" );
+ALTER TABLE "dbo"."contract" ADD CONSTRAINT "dealership" FOREIGN KEY ( "id_dealership" ASC ) REFERENCES "dbo"."dealership" ( "id" );
+ALTER TABLE "dbo"."contract" ADD CONSTRAINT "dealership_emp" FOREIGN KEY ( "id_dealership_emp" ASC ) REFERENCES "dbo"."dealership" ( "id" );
+ALTER TABLE "dbo"."contract" ADD CONSTRAINT "price" FOREIGN KEY ( "id_price" ASC ) REFERENCES "dbo"."price" ( "id" );
+ALTER TABLE "dbo"."contract" ADD CONSTRAINT "picture" FOREIGN KEY ( "id_picture" ASC ) REFERENCES "dbo"."picture" ( "id" );
 ALTER TABLE "dbo"."contract" ADD CONSTRAINT "templates" NOT NULL FOREIGN KEY ( "id_template" ASC ) REFERENCES "dbo"."templates" ( "id_template" );
