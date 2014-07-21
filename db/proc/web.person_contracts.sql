@@ -13,7 +13,7 @@ from pers_doc pd where pd.person_id=person.person_id order by pd.pers_doc_type_i
     person.inn,'|',
     cast(person.xid as nvarchar),'|',
     cast((select xid from organization o where o.id=(select id_org from dealership where contract.id_dealership=dealership.id))as nvarchar) as org_xid,'|',
-    contract.xid,'|'
+    contract.xid,'|',
     (SELECT list(number) from stall_status join stalls on stalls.id=stall_status.id_stall where stall_status.id_contract=contract.id),'|'
      from contract
 left join organization on contract.id_org=organization.id
