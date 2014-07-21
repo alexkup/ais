@@ -11,8 +11,8 @@ CREATE TABLE dbo.contract (
 	"id_dealership" integer,
 	"id_dealership_emp" integer,
 	"id_price" integer,	
-	"signature" integer not null,
-	"1c_flag" integer not null,
+	"signature" integer not null DEFAULT 0,
+	"1c_flag" integer not null DEFAULT 0,
 	"xid" UNIQUEIDENTIFIER,
 	"ts" TIMESTAMP NULL DEFAULT TIMESTAMP,
 	PRIMARY KEY ("id" ASC)
