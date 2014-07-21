@@ -11,7 +11,7 @@ CREATE TABLE dbo.organization (
 	"ogrn" nvarchar(60) NULL,
 	"id_bank" integer NOT NULL default 0,
 	"ts" TIMESTAMP NULL DEFAULT TIMESTAMP,
-	"xid" UNIQUEIDENTIFIER,
+	"xid" UNIQUEIDENTIFIER  DEFAULT NEWID(),
 	"partner_flag" integer NOT NULL default 1,
 	PRIMARY KEY ( "id" ASC )
 ) IN "system";
