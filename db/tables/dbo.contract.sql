@@ -13,6 +13,7 @@ CREATE TABLE dbo.contract (
 	"id_price" integer,	
 	"signature" integer not null,
 	"1c_flag" integer not null,
+	"xid" UNIQUEIDENTIFIER,
 	"ts" TIMESTAMP NULL DEFAULT TIMESTAMP,
 	PRIMARY KEY ("id" ASC)
 ) IN "system";
