@@ -14,7 +14,7 @@ CREATE TABLE dbo.person (
 	"inn" nchar(36) NULL, 
 	"deleted" integer NOT NULL DEFAULT 0,
 	"ts" TIMESTAMP NULL DEFAULT TIMESTAMP,
-	"xid" UNIQUEIDENTIFIER,
+	"xid" UNIQUEIDENTIFIER  DEFAULT NEWID(),
 	PRIMARY KEY ( "person_id" ASC )
 ) IN "system";
 COMMENT ON TABLE "dbo"."person" IS 'Физ. лица';
