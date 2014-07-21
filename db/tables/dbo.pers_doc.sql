@@ -5,8 +5,8 @@ CREATE TABLE dbo.pers_doc (
 	"num" nvarchar(40) NOT NULL,
 	"ddate" DATE NOT NULL,
 	"ddatee" DATE NULL,
-	"org" nvarchar(160) NULL,
-	"dept_code" nvarchar(512) NULL,
+	"org" nvarchar(512) NULL,
+	"dept_code" nvarchar(128) NULL,
 	PRIMARY KEY ( "person_id" ASC, "pers_doc_type_id" ASC )
 ) IN "system";
 COMMENT ON TABLE "dbo"."pers_doc" IS 'Персональные документы';
