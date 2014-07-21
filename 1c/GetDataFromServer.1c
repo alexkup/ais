@@ -1,0 +1,15 @@
+Функция GetDataFromServer(PostScript)
+ AnswerFile = ПолучитьИмяВременногоФайла("txt");
+ url = "vgcom.ru:8080";
+	Попытка
+ 		Соединение = Новый HTTPСоединение(url,,"sync_1c","*");
+ 		Соединение.Получить("/"+PostScript, AnswerFile);
+	Исключение
+		Сообщить(ОписаниеОшибки());
+		WriteLog(ОписаниеОшибки());
+	КонецПопытки;
+	//PostReply = Новый ЧтениеТекста(AnswerFile, КодировкаТекста.UTF8);
+	//PostReplyData = PostReply.Прочитать();
+	WriteLog("GetDataFromServer:" + AnswerFile);
+ Возврат AnswerFile;
+КонецФункции
