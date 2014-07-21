@@ -18,4 +18,4 @@ left join organization on contract.id_org=organization.id
 left join person on contract.id_person=person.person_id
 left join dealership on dealership.id=contract.id_dealership
 end;
-CREATE SERVICE "person_contracts" TYPE 'RAW' USER "sync_1c" AS exec web.person_contracts;
+CREATE SERVICE "person_contracts" TYPE 'RAW' USER "sync_1c" AS call web.person_contracts;
