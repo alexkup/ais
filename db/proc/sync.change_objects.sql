@@ -13,11 +13,11 @@ begin
         xid 
     from web.objects_1c outer_obj;
     
-    update dbo.objects set 
+   update dbo.objects set 
         dbo.objects.address=tmp.address, 
         dbo.objects.number=tmp.number,
         dbo.objects.id_obj_type=tmp.id_obj_type
-    from dbo.objects t1, tmp t2
+    from dbo.objects, tmp
     where (tmp.xid=dbo.objects.xid)
         and(tmp.address<>dbo.objects.address or tmp.id_obj_type<>dbo.objects.id_obj_type or tmp.number<>dbo.objects.number)
 end;
