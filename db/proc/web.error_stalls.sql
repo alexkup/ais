@@ -1,4 +1,4 @@
-create procedure web.error_stalls()
+create or replace procedure web.error_stalls()
 as
 begin
   select name as 'группа мест в 1с',typelink as 'конфликтные значения','существуют места с различными типами мест' as 'ошибка' from web.objects_1c where xid in(
