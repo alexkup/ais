@@ -19,7 +19,7 @@ begin
         dbo.stalls.id_object=tmp.id_object,
         dbo.stalls.id_stall_type=tmp.id_stall_type,
         dbo.stalls.number=tmp.number
-    from dbo.stalls t1, tmp t2
+    from dbo.stalls, tmp
     where (tmp.xid=dbo.stalls.xid)and
     (dbo.stalls.id_object<>tmp.id_object or dbo.stalls.id_stall_type<>tmp.id_stall_type or
         dbo.stalls.number<>tmp.number);
