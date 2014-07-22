@@ -9,10 +9,10 @@ BEGIN
     message 'sync.change_obj_type';
 	    call sync.change_obj_type();
 
-    message 'sync.add_organization';
-	    call sync.add_organization();
-    message 'sync.change_organization';
-	    call sync.change_organization();
+    message 'sync.add_organizations';
+	    call sync.add_organizations();
+    message 'sync.change_organizations';
+	    call sync.change_organizations();
 
     message 'sync.add_stalls_type';
 	    call sync.add_stalls_type();
