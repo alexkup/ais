@@ -11,3 +11,5 @@ begin
     select xid from web.objects_1c
     where xid_type is null)
 end;
+
+CREATE SERVICE "error_stalls" TYPE 'HTML' AUTHORIZATION OFF USER "web" AS call web.error_stalls();
