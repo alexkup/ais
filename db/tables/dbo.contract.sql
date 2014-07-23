@@ -1,6 +1,6 @@
 CREATE TABLE dbo.contract (
 	"id" integer NOT NULL DEFAULT AUTOINCREMENT,
-	"number" nvarchar(12) NOT NULL,
+	"number" nvarchar(128) NOT NULL,
 	"id_template" integer not null,
 	"ddateb" datetime not null,
 	"ddatee" datetime not null,
