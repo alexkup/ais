@@ -12,5 +12,4 @@ create table web.contracts_1c(
   xid_org UNIQUEIDENTIFIER,
   xid_partner UNIQUEIDENTIFIER,
   xid_stall UNIQUEIDENTIFIER,
-  xid UNIQUEIDENTIFIER,
-  primary key (xid));
+  xid UNIQUEIDENTIFIER);
