@@ -13,7 +13,7 @@ CREATE TABLE dbo.contract (
 	"id_price" integer,	
 	"signature" integer not null DEFAULT 0,
 	"1c_flag" integer not null DEFAULT 0,
-	"other_data" nvarchar(512)
+	"other_data" nvarchar(512),
 	"xid" UNIQUEIDENTIFIER DEFAULT NEWID(),
 	"ts" TIMESTAMP NULL DEFAULT TIMESTAMP,
 	PRIMARY KEY ("id" ASC)
