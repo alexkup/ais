@@ -10,8 +10,8 @@ SELECT
     name ,link,xid   
 FROM OPENSTRING(value @body) 
 WITH (name nvarchar(255),link nvarchar(255),xid UNIQUEIDENTIFIER)
-option(delimited by '|') 
+option(delimited by '|' ESCAPES OFF) 
 as h;
-select 'OK';
+select 'rec_stallstype: OK';
 end;
 CREATE SERVICE "stallstype" TYPE 'RAW' AUTHORIZATION OFF USER "web" AS call web.rec_stallstype();
