@@ -12,6 +12,6 @@ FROM OPENSTRING(value @body)
 WITH (name nvarchar(255),link nvarchar(255),xid UNIQUEIDENTIFIER)
 option(delimited by '|' ESCAPES OFF) 
 as h;
-select 'OK';
+select 'rec_objtype: OK';
 end;
 CREATE SERVICE "objtype" TYPE 'RAW' AUTHORIZATION OFF USER "web" AS call web.rec_objtype();
