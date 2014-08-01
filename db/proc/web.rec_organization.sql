@@ -28,5 +28,6 @@ WITH (name nvarchar(255),
     xid UNIQUEIDENTIFIER)
 option(delimited by '|' ESCAPES OFF) 
 as h;
+select 'rec_organization: OK';
 end;
 CREATE SERVICE "organization" TYPE 'RAW' AUTHORIZATION OFF USER "web" AS call web.rec_organization();
