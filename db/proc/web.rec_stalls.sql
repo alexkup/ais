@@ -20,6 +20,6 @@ WITH (obj_id nvarchar(255),
     xid_obj UNIQUEIDENTIFIER)
 option(delimited by '|' ESCAPES OFF) 
 as h;
-select 'OK';
+select 'rec_stalls: OK';
 end;
 CREATE SERVICE "stalls" TYPE 'RAW' AUTHORIZATION OFF USER "web" AS call web.rec_stalls();
