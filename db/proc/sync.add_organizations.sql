@@ -10,6 +10,6 @@ begin
         web.organization_1c.okato,
         web.organization_1c.okpo,
         web.organization_1c.ogrn
-    from web.organization_1c where web.organization_1c.xid not in(select xid from dbo.organization)
+    from web.organization_1c where web.organization_1c.xid not in(select xid from dbo.organization where xid is not null)
 
 end;
