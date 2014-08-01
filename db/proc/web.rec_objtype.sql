@@ -10,7 +10,7 @@ SELECT
     name ,link,xid   
 FROM OPENSTRING(value @body) 
 WITH (name nvarchar(255),link nvarchar(255),xid UNIQUEIDENTIFIER)
-option(delimited by '|') 
+option(delimited by '|' ESCAPES OFF) 
 as h;
 select 'OK';
 end;
