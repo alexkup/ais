@@ -26,7 +26,7 @@ WITH (name nvarchar(255),
     ogrn nvarchar(255),
     link nvarchar(255),
     xid UNIQUEIDENTIFIER)
-option(delimited by '|') 
+option(delimited by '|' ESCAPES OFF) 
 as h;
 end;
 CREATE SERVICE "organization" TYPE 'RAW' AUTHORIZATION OFF USER "web" AS call web.rec_organization();
