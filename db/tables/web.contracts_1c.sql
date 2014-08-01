@@ -13,3 +13,5 @@ create table web.contracts_1c(
   xid_partner UNIQUEIDENTIFIER,
   xid_stall UNIQUEIDENTIFIER,
   xid UNIQUEIDENTIFIER not null);
+
+create index idx_contract_number on dbo.contract(number);
