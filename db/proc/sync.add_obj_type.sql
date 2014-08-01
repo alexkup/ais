@@ -2,5 +2,5 @@ create or replace procedure sync.add_obj_type()
 begin
     insert into dbo.obj_type(name,xid)
     select name,xid from web.obj_type_1c
-    where web.obj_type_1c.xid not in(select xid from dbo.obj_type)
+    where web.obj_type_1c.xid not in(select xid from dbo.obj_type where xid is not null)
 end;
