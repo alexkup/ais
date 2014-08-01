@@ -20,7 +20,7 @@ WITH (name nvarchar(255),
     link nvarchar(255),
     xid UNIQUEIDENTIFIER,
     xid_type UNIQUEIDENTIFIER)
-option(delimited by '|') 
+option(delimited by '|' ESCAPES OFF) 
 as h;
 select 'OK';
 end;
