@@ -36,7 +36,7 @@ WITH (partner_name nvarchar(255),
   xid_partner UNIQUEIDENTIFIER,
   xid_stall UNIQUEIDENTIFIER,
   xid UNIQUEIDENTIFIER)
-option(delimited by '|',ESCAPES OFF) 
+option(delimited by '|' ESCAPES OFF) 
 as h;
 select 'rec_contracts: OK';
 end;
