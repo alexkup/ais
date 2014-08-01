@@ -7,5 +7,5 @@ begin
     web.stalls_1c.name,
     web.stalls_1c.xid
  from web.stalls_1c
- where web.stalls_1c.xid not in(select xid from stalls)
+ where web.stalls_1c.xid not in(select xid from stalls where xid is not null)
 end;
