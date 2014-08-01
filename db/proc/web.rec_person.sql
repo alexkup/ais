@@ -26,7 +26,7 @@ WITH ("fname" nvarchar(60),
 	"inn" nchar(36),
     link nvarchar(255), 
 	"xid" UNIQUEIDENTIFIER)
-option(delimited by '|') 
+option(delimited by '|' ESCAPES OFF) 
 as h;
 select 'OK';
 end;
