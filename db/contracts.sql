@@ -1,11 +1,51 @@
-alter table contract alter number nvarchar(128);
+begin
+    declare local temporary table tmp_dog(number nvarchar(256))
+    ON COMMIT PRESERVE ROWS; 
+create index idx_tmp on tmp_dog(number);
+LOAD TABLE tmp_dog(number)
+FROM '/home/ubuntu/dog2.csv'
+STRIP OFF
+QUOTES OFF
+ESCAPES OFF
+DELIMITED BY ';';
 
-select * from organization
 
+select count(*) from tmp_dog 
+left join contract on tmp_dog.number like contract.number
+where tmp_dog.number is not null and contract.number is null;
+/*
 select * from contract
-commit
+left join tmp_dog on tmp_dog.number=contract.number
+where tmp_dog.number is null and contract.number is not null;
+*/
+end;
 
+select count(distinct number) from contract
+
+
+
+select * from sa_conn_info()
+select * from objects where address like 'НЕПРО%'
+
+select * from web.obj_type_1c
+left join  obj_type on  web.obj_type_1c.xid= obj_type.xid
+
+select * from emp_obj
+insert into emp_obj(id_obj,id_person)
+select id,26 from objects
+
+select * from employee
+insert into employee
+select 26,4,12
+
+select * from person 
+select * from logins --26
+
+select count(*) from contract
+
+delete from stall_status where id_contract not in(5,6)
 delete from contract where id not in(5,6);
+commit
 
 insert into dbo.contract(number,id_template,ddateb,ddatee,ddatec,id_org,"1c_flag",other_data,xid)
 select 
@@ -13,7 +53,7 @@ select
     isnull(number,'НЕТ НОМЕРА'),
     4,
     convert(datetime,left(ddateb,charindex(' ',ddateb)-1),104),
-    convert(datetime,left(ddatee,charindex(' ',ddatee)-1),104),
+    isnull(convert(datetime,left(ddatee,charindex(' ',ddatee)-1),104),'2099-01-01'),
     now(),
     (select id from organization where organization.xid=xid_org),
     1,
@@ -22,21 +62,24 @@ select
     from web.contracts_1c
 
 
-delete from contract where id in (6794,7414);
-commit
+--delete from contract where id in (6794,7414);
+--commit
 
 insert into stall_status(id_stall,id_contract)
-select
-    (select id from stalls where stalls.xid=web.contracts_1c.xid_stall),
-    (select id from contract where contract.xid=web.contracts_1c.xid)
-from web.contracts_1c where exists(select id from stalls where stalls.xid=web.contracts_1c.xid_stall);
+select 
+    stalls.id,
+    contract.id
+from stalls
+join web.contracts_1c on stalls.xid=web.contracts_1c.xid_stall
+join contract on web.contracts_1c.xid=contract.xid 
+commit
 
-
-
-select * from stall_status
+select count(*) from stall_status
 
 rollback
-select * from web.contracts_1c where number like '%01%'
+select count(distinct number) from web.contracts_1c where number is not null
 
 select * from web.contracts_1c where xid is null
-select * from stalls
+select count(*) from stalls
+
+select * from contract where number like '0304800301ММ%';
