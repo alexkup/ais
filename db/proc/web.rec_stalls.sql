@@ -18,7 +18,7 @@ WITH (obj_id nvarchar(255),
     xid UNIQUEIDENTIFIER,
     xid_type UNIQUEIDENTIFIER,
     xid_obj UNIQUEIDENTIFIER)
-option(delimited by '|') 
+option(delimited by '|' ESCAPES OFF) 
 as h;
 select 'OK';
 end;
