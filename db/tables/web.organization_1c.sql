@@ -7,5 +7,7 @@ create table web.organization_1c (
     okpo nvarchar(255),
     ogrn nvarchar(255),
     link nvarchar(255),
+    link_bank nvarchar(255),
+    xid_bank UNIQUEIDENTIFIER,
     xid UNIQUEIDENTIFIER,
     primary key (xid));
