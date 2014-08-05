@@ -15,6 +15,8 @@ SELECT
     okpo,
     ogrn,
     link,
+    link_bank,
+    xid_bank,
     xid 
 FROM OPENSTRING(value @body) 
 WITH (name nvarchar(255),
@@ -25,6 +27,8 @@ WITH (name nvarchar(255),
     okpo nvarchar(255),
     ogrn nvarchar(255),
     link nvarchar(255),
+    link_bank nvarchar(255),
+    xid_bank UNIQUEIDENTIFIER,
     xid UNIQUEIDENTIFIER)
 option(delimited by '|' ESCAPES OFF) 
 as h;
