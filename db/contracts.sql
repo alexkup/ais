@@ -47,6 +47,14 @@ delete from stall_status where id_contract not in(5,6)
 delete from contract where id not in(5,6);
 commit
 
+
+insert into person(person_id,lname)
+select -1,'служебная персона'
+
+insert into dealership(number,id_org,id_person,ddateb,ddatee)
+select 'служебная '+cast(id as nvarchar),id,-1,'1990-01-01','2099-01-01' from organization
+where partner_flag=0
+
 insert into dbo.contract(number,id_template,ddateb,ddatee,ddatec,id_org,"1c_flag",other_data,xid)
 select 
     distinct
@@ -55,7 +63,7 @@ select
     convert(datetime,left(ddateb,charindex(' ',ddateb)-1),104),
     isnull(convert(datetime,left(ddatee,charindex(' ',ddatee)-1),104),'2099-01-01'),
     now(),
-    (select id from organization where organization.xid=xid_org),
+    (select id from dealership where dealership.id_person=-1 and dealership.id_org=(select id from organization where organization.xid=xid_org)),
     1,
     link_partner,
     xid
