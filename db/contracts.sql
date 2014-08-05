@@ -55,7 +55,7 @@ insert into dealership(number,id_org,id_person,ddateb,ddatee)
 select 'служебная '+cast(id as nvarchar),id,-1,'1990-01-01','2099-01-01' from organization
 where partner_flag=0
 
-insert into dbo.contract(number,id_template,ddateb,ddatee,ddatec,id_org,"1c_flag",other_data,xid)
+insert into dbo.contract(number,id_template,ddateb,ddatee,ddatec,id_dealership,"1c_flag",other_data,xid)
 select 
     distinct
     isnull(number,'НЕТ НОМЕРА'),
