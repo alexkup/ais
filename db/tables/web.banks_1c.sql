@@ -6,7 +6,7 @@ create table web.banks_1c(
     schet nvarchar(255),
     korschet nvarchar(255),
     bik nvarchar(255),
-    lonk_org nvarchar(255),
+    link_org nvarchar(255),
     xid_org UNIQUEIDENTIFIER,
     xid UNIQUEIDENTIFIER,
     primary key (xid));
