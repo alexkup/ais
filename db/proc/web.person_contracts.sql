@@ -18,6 +18,8 @@ from pers_doc pd where pd.person_id=person.person_id order by pd.pers_doc_type_i
      from contract
 left join organization on contract.id_org=organization.id
 left join person on contract.id_person=person.person_id
+left join dealership on dealership.id=contract.id_dealership
+where contract."1c_flag"=1 and dealership.id_person<>-1;
 end;
 
 CREATE SERVICE "person_contracts" TYPE 'RAW' USER "sync_1c" AS call web.person_contracts;
