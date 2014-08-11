@@ -33,4 +33,6 @@ BEGIN
 	    call sync.add_banks();
     message 'sync.change_banks';
 	    call sync.change_banks();
+	    
+    message 'sync_all finished';
 END;
