@@ -9,6 +9,7 @@ CREATE TABLE "dbo"."banks" (
 	"phone" NVARCHAR(512) NULL,
 	"org" INTEGER NULL,
 	"ts" TIMESTAMP NULL DEFAULT TIMESTAMP,
+	xid UNIQUEIDENTIFIER,
 	PRIMARY KEY ( "id" ASC )
 ) IN "system";
 COMMENT ON TABLE "dbo"."banks" IS 'Банковские реквизиты';
