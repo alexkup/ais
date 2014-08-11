@@ -6,11 +6,12 @@ set @body=left(@body,length(@body)-1);
 set @body=right(@body,length(@body)-1);
 truncate table web.banks_1c;
 insert into web.banks_1c
-SELECT link,name,city,address,schet,korschet,bik,link_org,xid_org,xid
+SELECT link,name,bankname,city,address,schet,korschet,bik,link_org,xid_org,xid
   
 FROM OPENSTRING(value @body) 
 WITH (link nvarchar(255),
     name nvarchar(255),
+    bankname nvarchar(255),
     city nvarchar(255),
     address nvarchar(255),
     schet nvarchar(255),
@@ -23,4 +24,5 @@ option(delimited by '|' ESCAPES OFF)
 as h;
 select 'rec_banks: OK';
 end;
+
 CREATE SERVICE "banks" TYPE 'RAW' AUTHORIZATION OFF USER "web" AS call web.rec_banks();
