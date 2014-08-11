@@ -28,4 +28,9 @@ BEGIN
 	    call sync.add_stalls();
     message 'sync.change_stalls';
 	    call sync.change_stalls();
+	    
+    message 'sync.add_banks';
+	    call sync.add_banks();
+    message 'sync.change_banks';
+	    call sync.change_banks();
 END;
