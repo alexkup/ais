@@ -10,7 +10,7 @@ create table web.organization_1c (
     link_bank nvarchar(255),
     uaddress nvarchar(1024),
     faddress nvarchar(1024),
-    tel nvarchar(256);
+    tel nvarchar(256),
     xid_bank UNIQUEIDENTIFIER,
     xid UNIQUEIDENTIFIER,
     primary key (xid));
