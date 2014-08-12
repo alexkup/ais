@@ -9,6 +9,8 @@ CREATE TABLE dbo.organization (
 	"okato" nvarchar(60) NULL,
 	"okpo" nvarchar(60) NULL,
 	"ogrn" nvarchar(60) NULL,
+	uaddress nvarchar(1024),
+	faddress nvarchar(1024),
 	"id_bank" integer NOT NULL default 0,
 	"ts" TIMESTAMP NULL DEFAULT TIMESTAMP,
 	"xid" UNIQUEIDENTIFIER  DEFAULT NEWID(),
