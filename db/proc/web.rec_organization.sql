@@ -16,6 +16,9 @@ SELECT
     ogrn,
     link,
     link_bank,
+    uaddress,
+    faddress,
+    tel,
     xid_bank,
     xid 
 FROM OPENSTRING(value @body) 
@@ -28,6 +31,9 @@ WITH (name nvarchar(255),
     ogrn nvarchar(255),
     link nvarchar(255),
     link_bank nvarchar(255),
+    uaddress nvarchar(1024),
+    faddress nvarchar(1024),
+    tel nvarchar(256),
     xid_bank UNIQUEIDENTIFIER,
     xid UNIQUEIDENTIFIER)
 option(delimited by '|' ESCAPES OFF) 
