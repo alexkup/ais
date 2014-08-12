@@ -11,6 +11,7 @@ CREATE TABLE dbo.organization (
 	"ogrn" nvarchar(60) NULL,
 	uaddress nvarchar(1024),
 	faddress nvarchar(1024),
+	tel nvarchar(50),
 	"id_bank" integer NOT NULL default 0,
 	"ts" TIMESTAMP NULL DEFAULT TIMESTAMP,
 	"xid" UNIQUEIDENTIFIER  DEFAULT NEWID(),
