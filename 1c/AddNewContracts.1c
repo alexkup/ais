@@ -1,5 +1,6 @@
 Процедура AddNewContracts()
-	Reply = Новый ЧтениеТекста(GetDataFromServer("person_contracts"), КодировкаТекста.UTF8);
+	ReplyDataFile = GetDataFromServer("person_contracts");
+	Reply = Новый ЧтениеТекста(ReplyDataFile, КодировкаТекста.UTF8);
 	
 	Пока Истина Цикл
 	
@@ -59,5 +60,7 @@
 		Дог.АР_Периодичность = Перечисления.Периодичность.Месяц;
 	//
 		Дог.Записать();
-	КонецЦикла	
+	КонецЦикла;
+	Reply.Закрыть();
+	УдалитьФайлы(ReplyDataFile);
 КонецПроцедуры
