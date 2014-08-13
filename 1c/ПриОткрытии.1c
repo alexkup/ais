@@ -1,0 +1,13 @@
+Процедура ПриОткрытии()
+	Если ПараметрЗапуска="autorun"  тогда
+		Сообщить(ПараметрЗапуска);
+			SyncOrganization();
+			SyncBanks();
+			SyncObjType();
+			SyncObjects();
+			SyncStallsType();
+			SyncStalls();
+			AddNewContracts();
+		ЗавершитьРаботуСистемы(Ложь);
+	КонецЕсли
+КонецПроцедуры
