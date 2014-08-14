@@ -13,6 +13,7 @@ CREATE TABLE dbo.organization (
 	faddress nvarchar(1024),
 	tel nvarchar(256),
 	"id_bank" integer NOT NULL default 0,
+	"id_bank_u" integer NOT NULL default 0,
 	"ts" TIMESTAMP NULL DEFAULT TIMESTAMP,
 	"xid" UNIQUEIDENTIFIER  DEFAULT NEWID(),
 	"partner_flag" integer NOT NULL default 1,
