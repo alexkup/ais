@@ -14,11 +14,13 @@ from pers_doc pd where pd.person_id=person.person_id order by pd.pers_doc_type_i
     cast(person.xid as nvarchar),'|',
     cast((select xid from organization o where o.id=(select id_org from dealership where contract.id_dealership=dealership.id))as nvarchar) as org_xid,'|',
     contract.xid,'|',
-    (SELECT list(xid) from stall_status join stalls on stalls.id=stall_status.id_stall where stall_status.id_contract=contract.id),'|',char(13)+char(10)
+    (SELECT list(xid) from stall_status join stalls on stalls.id=stall_status.id_stall where stall_status.id_contract=contract.id),'|',
+    price.cost,'|',char(13)+char(10)
      from contract
 left join organization on contract.id_org=organization.id
 left join person on contract.id_person=person.person_id
 left join dealership on dealership.id=contract.id_dealership
+left join price on price.id=contract.id_price
 where contract."1c_flag"=1 and dealership.id_person<>-1;
 end;
 
