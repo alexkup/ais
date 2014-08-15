@@ -2,9 +2,9 @@ create or replace procedure web.org_contracts()
 begin
 select 
     contract.number,'|',
-    date(contract.ddateb),'|',
-    date(contract.ddatee),'|',
-    date(contract.ddatec),'|',
+    convert(nvarchar,contract.ddateb,112),'|',
+    convert(nvarchar,contract.ddatee,112),'|',
+    convert(nvarcher,contract.ddatec,112),'|',
     organization.name,'|',
     organization.org,'|',
     organization.mainaccname,'|',
