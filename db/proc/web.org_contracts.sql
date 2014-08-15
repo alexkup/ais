@@ -4,7 +4,7 @@ select
     contract.number,'|',
     convert(nvarchar,contract.ddateb,112),'|',
     convert(nvarchar,contract.ddatee,112),'|',
-    convert(nvarcher,contract.ddatec,112),'|',
+    convert(nvarchar,contract.ddatec,112),'|',
     organization.name,'|',
     organization.org,'|',
     organization.mainaccname,'|',
