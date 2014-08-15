@@ -2,9 +2,9 @@ create or replace procedure web.person_contracts()
 begin
 select 
     contract.number,'|',
-    date(contract.ddateb),'|',
-    date(contract.ddatee),'|',
-    date(contract.ddatec),'|',
+    convert(nvarchar,contract.ddateb,112),'|',
+    convert(nvarchar,contract.ddatee,112),'|',
+    convert(nvarchar,contract.ddatec,112),'|',
     (person.lname+' '+person.fname+' '+person.mname),'|',
     (select top 1 
     (select name from pers_doc_type pdt where pdt.pers_doc_type_id=pd.pers_doc_type_id)+' '+pd.ser+' '+pd.num+' выдан '+
