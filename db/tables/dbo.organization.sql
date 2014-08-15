@@ -22,3 +22,4 @@ CREATE TABLE dbo.organization (
 COMMENT ON TABLE "dbo"."organization" IS 'Юр лица';
 
 ALTER TABLE "dbo"."organization" ADD CONSTRAINT "banks" NOT NULL FOREIGN KEY ( "id_bank" ASC ) REFERENCES "dbo"."banks" ( "id" );
+ALTER TABLE "dbo"."organization" ADD CONSTRAINT "banks_u" NOT NULL FOREIGN KEY ( "id_bank_u" ASC ) REFERENCES "dbo"."banks" ( "id" );
