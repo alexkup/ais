@@ -4,6 +4,7 @@ create table dbo.contracts_halted(
     filename nvarchar(512),
     other nvarchar(1024),
     "xid" UNIQUEIDENTIFIER DEFAULT NEWID(),
+    "xid_act" UNIQUEIDENTIFIER DEFAULT NEWID(),
     PRIMARY KEY (xid));
     
 COMMENT ON TABLE "dbo"."contracts_halted" IS 'расторгнутые договра';
