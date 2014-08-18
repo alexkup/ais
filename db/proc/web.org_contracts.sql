@@ -16,6 +16,7 @@ select
     organization.xid,'|',
     (select xid from organization o where o.id=(select id_org from dealership where contract.id_dealership=dealership.id)) as org_xid,'|',
     contract.xid,'|',
+    contract.xid_act,'|',
     (SELECT list(xid) from stall_status join stalls on stalls.id=stall_status.id_stall where stall_status.id_contract=contract.id),'|',
     price.cost,'|',char(13)+char(10)
      from contract
