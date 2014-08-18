@@ -15,6 +15,7 @@ CREATE TABLE dbo.contract (
 	"1c_flag" integer not null DEFAULT 0,
 	"other_data" nvarchar(512),
 	"xid" UNIQUEIDENTIFIER DEFAULT NEWID(),
+	"xid_act" UNIQUEIDENTIFIER DEFAULT NEWID(),
 	"ts" TIMESTAMP NULL DEFAULT TIMESTAMP,
 	PRIMARY KEY ("id" ASC)
 ) IN "system";
