@@ -8,6 +8,7 @@
 			SyncStallsType();
 			SyncStalls();
 			AddNewContracts();
+			AddNewHalt();
 		ЗавершитьРаботуСистемы(Ложь);
 	КонецЕсли
 КонецПроцедуры
