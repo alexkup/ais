@@ -23,7 +23,7 @@ left join organization on contract.id_org=organization.id
 left join person on contract.id_person=person.person_id
 left join dealership on dealership.id=contract.id_dealership
 left join price on price.id=contract.id_price
-where contract."1c_flag"=1 and dealership.id_person<>-1 and id_org is null;
+where contract."1c_flag"=1 and dealership.id_person<>-1 and contract.id_org is null;
 end;
 
 CREATE SERVICE "person_contracts" TYPE 'RAW' USER "sync_1c" AS call web.person_contracts;
