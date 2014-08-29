@@ -18,6 +18,7 @@ CREATE TABLE dbo.contract (
 	"xid_act" UNIQUEIDENTIFIER DEFAULT NEWID(),
 	"xid_act2" UNIQUEIDENTIFIER DEFAULT NEWID(),
 	"ts" TIMESTAMP NULL DEFAULT TIMESTAMP,
+	want_halt int default 0,
 	PRIMARY KEY ("id" ASC)
 ) IN "system";
 COMMENT ON TABLE "dbo"."contract" IS 'Договоры';
