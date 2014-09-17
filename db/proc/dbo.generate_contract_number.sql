@@ -13,5 +13,5 @@ begin
   join objects on  objects.id=stalls.id_object
   join obj_type on objects.id_obj_type=obj_type.id_obj_type
   where stalls.id=@id_stall);
-    return @rrr+right('00'+cast(@k as nvarchar),3);
+    return @rrr+right('0'+cast(@k as nvarchar),2);
 end;
