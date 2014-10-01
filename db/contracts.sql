@@ -1,3 +1,11 @@
+--clear:
+truncate table stall_status;
+truncate table penalty;
+truncate table contracts_halted;
+truncate table vehicle_reg;
+truncate table contract;
+
+
 begin
     declare local temporary table tmp_dog(number nvarchar(256))
     ON COMMIT PRESERVE ROWS; 
