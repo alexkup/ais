@@ -69,7 +69,7 @@ select
     isnull(number,'НЕТ НОМЕРА'),
     4,
     convert(datetime,left(ddateb,charindex(' ',ddateb)-1),104),
-    isnull(convert(datetime,left(ddatee,charindex(' ',ddatee)-1),104),'2099-01-01'),
+    isnull(convert(datetime,left(ddatee,charindex(' ',ddatee)-1),104),'2050-01-01'),
     now(),
     (select id from dealership where dealership.id_person=-1 and dealership.id_org=(select id from organization where organization.xid=xid_org)),
     1,
