@@ -9,7 +9,7 @@ select
     other_data as 'Контрагент(порчее)'
 from contract
 left join web.contract_acts_1c on web.contract_acts_1c.xid_contrcat=contract.xid
-where web.contract_acts_1c.xid_contrcat is null
+where web.contract_acts_1c.xid_contrcat is null and other_data is not null
 order by other_data
 end;
 
