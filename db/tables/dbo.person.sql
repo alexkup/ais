@@ -3,6 +3,7 @@ CREATE TABLE dbo.person (
 	"fname" nvarchar(60) NULL,
 	"mname" nvarchar(60) NULL,
 	"lname" nvarchar(120) NOT NULL,
+	"suffix" nvarchar(100),
 	"sex" nchar(1) NULL,
 	"birth_date" DATE NULL,
 	"death_date" DATE NULL,
