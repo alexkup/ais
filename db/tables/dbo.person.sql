@@ -22,3 +22,6 @@ COMMENT ON TABLE "dbo"."person" IS 'Физ. лица';
 COMMENT ON COLUMN "dbo"."person"."pers_account" IS 'снилс';
 
 ALTER TABLE "dbo"."person" ADD CONSTRAINT "picture" FOREIGN KEY ( "pic_id" ASC ) REFERENCES "dbo"."picture" ( "id" );
+
+CREATE UNIQUE CLUSTERED INDEX "first_middle_last_suffix_unique" ON "dbo"."person" ( "fname" ASC, "mname" ASC, "lname" ASC, "suffix" ASC ) WITH NULLS NOT DISTINCT IN "system";
+
