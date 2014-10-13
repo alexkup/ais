@@ -5,7 +5,7 @@ select
     convert(nvarchar,contract.ddateb,112),'|',
     convert(nvarchar,contract.ddatee,112),'|',
     convert(nvarchar,contract.ddatec,112),'|',
-    (person.lname+' '+person.fname+' '+person.mname),'|',
+    (person.lname+' '+person.fname+' '+person.mname+' '+person.suffix),'|',
     (select top 1 
     (select name from pers_doc_type pdt where pdt.pers_doc_type_id=pd.pers_doc_type_id)+' '+pd.ser+' '+pd.num+' выдан '+
     pd.org+', '+cast(ddate as nvarchar)
