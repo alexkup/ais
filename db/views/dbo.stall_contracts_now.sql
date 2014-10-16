@@ -1,6 +1,6 @@
 create view dbo.stall_contracts_now as
 select 
-    contract.id,
+    	contract.id,
 	contract.number,
 	contract.id_template,
 	contract.ddateb,
