@@ -19,7 +19,8 @@ select
 	contract.xid_act,
 	contract.xid_act2,
 	contract.ts,
-	contract.want_halt
+	contract.want_halt,
+    stall_status.id_stall
  from contract
 join stall_status on stall_status.id_contract=contract.id
 where (getdate() between contract.ddateb and contract.ddatee)
