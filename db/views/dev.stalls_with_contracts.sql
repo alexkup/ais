@@ -1,3 +1,4 @@
+create view dev.stalls_with_contracts as
 SELECT distinct stalls.id_object AS object_id,
     objects.number as obj_number,
     objects.address,
