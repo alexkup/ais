@@ -25,3 +25,4 @@ ALTER TABLE "dbo"."organization" ADD CONSTRAINT "banks" NOT NULL FOREIGN KEY ( "
 ALTER TABLE "dbo"."organization" ADD CONSTRAINT "banks_u" NOT NULL FOREIGN KEY ( "id_bank_u" ASC ) REFERENCES "dbo"."banks" ( "id" );
 
 CREATE UNIQUE CLUSTERED INDEX "inn_unique" ON "dbo"."organization" ( "inn" ASC, "kpp" ASC ) IN "system";
+CREATE UNIQUE NONCLUSTERED INDEX "inn_unique1" ON "dbo"."organization" ( "inn" ASC ) IN "system";
