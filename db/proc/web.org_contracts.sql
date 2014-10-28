@@ -5,7 +5,7 @@ select
     convert(nvarchar,contract.ddateb,112),'|',
     convert(nvarchar,contract.ddatee,112),'|',
     convert(nvarchar,contract.ddatec,112),'|',
-    organization.name,'|',
+    org_name_with_suffix(organization.id),'|',
     organization.org,'|',
     organization.mainaccname,'|',
     organization.directorname,'|',
